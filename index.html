@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Discriminant Calculator</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+        input {
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 250px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Discriminant of a Quadratic Equation</h1>
+
+<label>A</label><br>
+<input type="number" id="a" placeholder="Value of a"><br>
+
+<label>B</label><br>
+<input type="number" id="b" placeholder="Value of b"><br>
+
+<label>C</label><br>
+<input type="number" id="c" placeholder="Value of c"><br>
+
+<button onclick="calculate()">Submit</button>
+
+<div id="result"></div>
+
+<script>
+function calculate() {
+    let a = document.getElementById("a").value;
+    let b = document.getElementById("b").value;
+    let c = document.getElementById("c").value;
+
+    if (a === "" || b === "" || c === "") {
+        document.getElementById("result").innerHTML = "Please enter all values.";
+        return;
+    }
+
+    let D = (b * b) - (4 * a * c);
+
+    document.getElementById("result").innerHTML =
+        "Discriminant = " + D;
+}
+</script>
+
+</body>
+</html>
